@@ -39,13 +39,13 @@
   --paper:#0a1633; --paper-2:#5b6478;
   --grey:#e6e9f0; --grey-2:#6b7280; --grey-3:#9aa3b5;
   --ink-muted:#eef1f8; --ink-soft:#d5dae6;
-  --signal:#3b6fee; --signal-2:#2a52c9; --success:#3fc97a; --gold:#7b5fe0; --warn:#f5a623;
-  --grad-hero:linear-gradient(135deg,#3b6fee 0%,#7b5fe0 100%);
+  --signal:#0f9d74; --signal-2:#0b7e5d; --success:#16a34a; --gold:#7b5fe0; --warn:#f5a623;
+  --grad-hero:linear-gradient(135deg,#12a87e 0%,#0c8f69 100%);
   --r-sm:10px; --r:14px; --r-lg:18px; --r-pill:999px;
   --sh-sm:0 1px 3px rgba(10,22,51,.06),0 1px 2px rgba(10,22,51,.04);
   --sh-md:0 8px 24px rgba(10,22,51,.10),0 2px 6px rgba(10,22,51,.05);
   --sh-lg:0 18px 48px rgba(10,22,51,.14);
-  --glow:0 12px 30px rgba(59,111,238,.26);
+  --glow:0 12px 30px rgba(15,157,116,.26);
   --font-display:'Plus Jakarta Sans',-apple-system,sans-serif;
   --font-mono:'Plus Jakarta Sans',-apple-system,sans-serif;
   --font-accent:'Plus Jakarta Sans',-apple-system,sans-serif;
@@ -58,19 +58,19 @@
     --paper:#eef2fb; --paper-2:#9aa6c0;
     --grey:#26314f; --grey-2:#9aa6c0; --grey-3:#5f6b89;
     --ink-muted:#1a2440; --ink-soft:#344063;
-    --signal:#5b85f2; --signal-2:#3b6fee; --success:#4cd98a; --gold:#9a82f0;
-    --grad-hero:linear-gradient(135deg,#3b6fee 0%,#7b5fe0 100%);
+    --signal:#34d399; --signal-2:#10b981; --success:#34d399; --gold:#9a82f0;
+    --grad-hero:linear-gradient(135deg,#15b487 0%,#0e9b73 100%);
     --sh-sm:0 1px 3px rgba(0,0,0,.4);
     --sh-md:0 8px 24px rgba(0,0,0,.5);
     --sh-lg:0 18px 48px rgba(0,0,0,.6);
-    --glow:0 12px 30px rgba(59,111,238,.4);
+    --glow:0 12px 30px rgba(15,157,116,.4);
   }
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{background:var(--ink)}
 body{
   background:
-    radial-gradient(900px 600px at 100% -8%, rgba(59,111,238,.06), transparent 60%),
+    radial-gradient(900px 600px at 100% -8%, rgba(15,157,116,.06), transparent 60%),
     radial-gradient(700px 500px at -8% 108%, rgba(123,95,224,.05), transparent 55%),
     var(--ink);
   background-attachment:fixed;
@@ -80,6 +80,8 @@ body{
   min-height:100vh;
 }
 #root{min-height:100vh}
+/* Cleaner SaaS heading scale — shrink in-app page titles (landing hero stays large) */
+main h1{font-size:clamp(24px,3.2vw,34px)!important;letter-spacing:-0.03em!important;font-weight:800!important;line-height:1.1!important}
 
 /* Typography utilities */
 .mono{font-family:var(--font-mono)}
@@ -110,11 +112,11 @@ input,select,textarea{
   transition:border-color 140ms var(--ease-out),box-shadow 140ms var(--ease-out);
 }
 input::placeholder,textarea::placeholder{color:var(--grey-3)}
-input:focus,select:focus,textarea:focus{border-color:var(--signal);outline:none;box-shadow:0 0 0 3px rgba(59,111,238,.14)}
+input:focus,select:focus,textarea:focus{border-color:var(--signal);outline:none;box-shadow:0 0 0 3px rgba(15,157,116,.14)}
 
 /* Status dots */
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%!important;margin-right:8px;vertical-align:middle}
-.dot-signal{background:var(--signal);box-shadow:0 0 0 3px rgba(59,111,238,0.16)}
+.dot-signal{background:var(--signal);box-shadow:0 0 0 3px rgba(15,157,116,0.16)}
 .dot-success{background:var(--success)}
 .dot-grey{background:var(--grey-2)}
 .dot-muted{background:var(--grey-3)}
@@ -163,7 +165,7 @@ tr:hover td{background:var(--ink-3)}
   transition:all 140ms var(--ease-out);
 }
 .nav-item:hover{color:var(--paper);background:var(--ink-2)}
-.nav-item.active{color:var(--signal);background:rgba(59,111,238,.10)}
+.nav-item.active{color:var(--signal);background:rgba(15,157,116,.10)}
 
 /* Stamp */
 @keyframes stampIn{from{opacity:0;transform:rotate(-12deg) scale(1.4)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
@@ -208,7 +210,7 @@ kbd{
   font:500 10px var(--font-mono);letter-spacing:0.1em;
   text-transform:uppercase;border:1px solid var(--grey);color:var(--grey-2);
 }
-.label-tag-signal{border-color:rgba(59,111,238,.35);color:var(--signal);background:rgba(59,111,238,.10)}
+.label-tag-signal{border-color:rgba(15,157,116,.35);color:var(--signal);background:rgba(15,157,116,.10)}
 .label-tag-success{border-color:rgba(63,201,122,.4);color:var(--success);background:rgba(63,201,122,.12)}
 .label-tag-paper{border-color:var(--grey-3);color:var(--paper)}
 .label-tag-gold{border-color:rgba(123,95,224,.4);color:var(--gold);background:rgba(123,95,224,.12)}
@@ -231,9 +233,9 @@ kbd{
 <body>
 <div id="root">
   <div id="fallback" style="padding:40px;font-family:'Plus Jakarta Sans',sans-serif;color:#0a1633;background:#ffffff;min-height:100vh;">
-    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:28px;letter-spacing:-0.04em;">FOOD EVENTS<span style="color:#3b6fee;">.</span></div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:28px;letter-spacing:-0.04em;">FOOD EVENTS<span style="color:#0f9d74;">.</span></div>
     <div style="margin-top:24px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;">A CARREGAR · SE PERSISTIR MAIS DE 5S, VERIFICAR CONSOLA</div>
-    <div id="fallback-error" style="margin-top:24px;font-size:12px;color:#3b6fee;letter-spacing:0.05em;"></div>
+    <div id="fallback-error" style="margin-top:24px;font-size:12px;color:#0f9d74;letter-spacing:0.05em;"></div>
   </div>
 </div>
 
@@ -1104,7 +1106,7 @@ const ManagerTimeline = ({ event }) => (
               width:15, height:15, borderRadius:'50%',
               background: t.highlight ? 'var(--signal)' : t.status === 'done' ? 'var(--success)' : 'var(--ink-2)',
               border:`2px solid ${color}`,
-              boxShadow: t.highlight ? '0 0 0 4px rgba(59,111,238,0.18)' : 'none',
+              boxShadow: t.highlight ? '0 0 0 4px rgba(15,157,116,0.18)' : 'none',
             }}></div>
             <div className="mono" style={{fontSize:11, color, letterSpacing:'0.12em', marginBottom:4}}>
               {t.date}
@@ -1285,7 +1287,7 @@ const ManagerPlan = ({ event }) => (
           <div key={n} style={{
             aspectRatio:'1/1', border:'1px solid var(--grey)', display:'flex',
             alignItems:'center', justifyContent:'center', flexDirection:'column',
-            background: n === 1 ? 'rgba(59,111,238,0.08)' : 'var(--ink-2)',
+            background: n === 1 ? 'rgba(15,157,116,0.08)' : 'var(--ink-2)',
             borderColor: n === 1 ? 'var(--signal)' : 'var(--grey)',
           }}>
             <div className="mono" style={{fontSize:11, letterSpacing:'0.1em', color: n === 1 ? 'var(--signal)' : 'var(--paper)'}}>T{n.toString().padStart(2,'0')}</div>
